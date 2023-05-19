@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<h4> @TempData["message"]</h4>
+@if (ViewData["Colors"]!=null)
+{
+    <ol>
+        @foreach (string color in (IEnumerable<string>)ViewData["Colors"])
+        {
+            <li>
+                @color
+            </li>
+        }
+    </ol>
+}
+else{
+    <p>
+        List is not available
+    </p>
+}
+<h4>List Using View Bag</h4>
+ <ol>
+    @foreach (string color in ViewBag.Colors)
+    {
+                <li>
+                    @color
+                </li>
+    }
+    </ol>
